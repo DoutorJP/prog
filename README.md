@@ -8,3 +8,8 @@ Sinta-se livre para edita-lo para o seu proposito!
 
 para intalar rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`
 digite `prog -h`para ter um manual completo do programa!
+
+#PROG - um ajudante para programação
+#versão 1.1
+#por: João Pedro de Moura Vasconcelos
+#07/05/2021
