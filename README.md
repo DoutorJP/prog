@@ -8,6 +8,7 @@ Sinta-se livre para edita-lo para o seu proposito!
 
 ### ATENÇÃO
 **PARA INSTALAR O PROG VOCÊ DEVERÁ INSTALAR A DEPENDENCIA `figlet`**
+
 para intalar rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`
 digite `prog -h`para ter um manual completo do programa!
 
