@@ -1,4 +1,10 @@
 #!/bin/zsh
+
+#PROG - um ajudante para programação
+#versão 1.1
+#por: João Pedro de Moura Vasconcelos
+#07/05/2021
+figlet "PROG"
 echo "Digite -h para obter ajuda"
 if [[ "$1" == "-h" ]]
 then
