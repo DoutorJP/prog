@@ -4,7 +4,12 @@
 #versão 1.2
 #por: João Pedro de Moura Vasconcelos
 #19/05/2021
-figlet "PROG"
+if ! command -v figlet &> /dev/null      
+then
+    echo "welcome to PROG"
+else
+    figlet "PROG"
+fi
 echo "Bem-vindo ao prog, o ajudande da programação"
 echo "Digite -h para obter ajuda"
 if [[ "$1" == "-h" ]]
