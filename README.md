@@ -16,7 +16,7 @@ depois:
 
 ` cd ~/prog`
 
-Para intalar o prog rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`(Certifique-se de rodar ` chmod +x config.sh` antes. Faça o mesmo para o arquivo principal `prog.sh`)
+Para intalar o prog rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`(Certifique-se de rodar ` chmod a +x config.sh` antes. Faça o mesmo para o arquivo principal `prog.sh`)
 
 digite `prog -h`para ter um manual completo do programa!
 
