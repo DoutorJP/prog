@@ -1,7 +1,7 @@
 #!/bin/bash
 
-echo "alias prog='./prog.sh'" > ~/.bashrc
-if [[! -d "$DIRECTORY" ]]
+echo "alias prog='cd prog && ./prog.sh'" > ~/.bashrc
+if [[ ! -d "$DIRECTORY" ]]
 then
 mkdir ~/Documentos/Programacao
 mkdir ~/Documentos/Programacao/C
