@@ -5,13 +5,13 @@
 #por: João Pedro de Moura Vasconcelos
 #07/05/2021
 figlet "PROG"
-echo "Bem-vindo ao prog, o ajudande da programação"
-echo "Digite -h para obter ajuda"
+echo "Welcome to prog, a simple helper to programming"
+echo "Type prog -h for help"
 if [[ "$1" == "-h" ]]
 then
-	echo "Sintaxe: ./prog.sh <opcao> <nome do arquivo>"
+	echo "Sintax: prog <option> <name of the file>"
 	echo "============================================"
-	echo " OPCAO                     LINGUAGEM"
+	echo " OPTION                     LANGUAGE"
 	echo "============================================"
 	echo " -s			SHELL SCRIPT     "
 	echo " -j			JAVA		 "
