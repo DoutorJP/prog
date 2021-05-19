@@ -1,5 +1,5 @@
 # PROG
-##Um ajudante para programar!
+## Um ajudante para programar!
 
 prog é um programa simples que ajuda na tarefa de entrar no diretório desejado e criar um arquivo.
 Sinta-se livre para edita-lo para o seu proposito!
