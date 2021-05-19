@@ -5,6 +5,7 @@
 #por: João Pedro de Moura Vasconcelos
 #07/05/2021
 figlet "PROG"
+echo "Bem-vindo ao prog, o ajudande da programação"
 echo "Digite -h para obter ajuda"
 if [[ "$1" == "-h" ]]
 then
