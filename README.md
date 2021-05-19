@@ -1,18 +1,17 @@
-# PROG
-Um ajudante para programar!
+#PROG - A simple helper to programming
+#version ENGLISH - 1.0
+#by: João Pedro de Moura Vasconcelos
 
-prog é um programa simples que ajuda na tarefa de entrar no diretório desejado e criar um arquivo.
-Sinta-se livre para edita-lo para o seu proposito!
+prog is a simple program to help users on switching the directory to program and create a file.
 
-## INSTALAÇÃO
+This is a free software project. feel free to edit it in your way, and collaborate, if you want to.
 
-### ATENÇÃO
-**PARA INSTALAR O PROG VOCÊ DEVERÁ INSTALAR A DEPENDENCIA `figlet`, confira nos repositórios da sua distribuição**
+## INSTALLATION
 
-Para intalar o prog rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`
-digite `prog -h`para ter um manual completo do programa!
+### CAUTION
+**To install PROG you will need to install the dependency `figlet` and vim. check your distro repository**
 
-#PROG - um ajudante para programação
-#versão 1.1
-#por: João Pedro de Moura Vasconcelos
-#07/05/2021
+To install prog, please run the `config.sh` file, and the it will create some directories on  `~Documents/Programming`
+
+#### Type `prog -h` to get a complete manual about prog!
+

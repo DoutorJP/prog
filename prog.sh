@@ -1,9 +1,10 @@
-#!/bin/zsh
+#!/usr/bin/env bash
 
-#PROG - um ajudante para programação
-#versão 1.1
-#por: João Pedro de Moura Vasconcelos
-#07/05/2021
+#PROG - A simple helper to programming
+#version ENGLISH - 1.0
+#by: João Pedro de Moura Vasconcelos
+#contact: email: jpmv14@gmail.com
+#originally created in march/2021
 figlet "PROG"
 echo "Welcome to prog, a simple helper to programming"
 echo "Type prog -h for help"
@@ -22,14 +23,14 @@ fi
 if [[ "$1" == "-s" ]]
 then
 	echo "shell"	
-	cd ~/Documentos/Programacao/SHELL	
+	cd ~/Documents/Programming/SHELL	
 	vim $2
 fi
 
 if [[ "$1" == "-j" ]]
 then
 	echo "java"	
-	cd ~/Documentos/Programacao/JAVA
+	cd ~/Documentos/Programming/JAVA
 	vim $2
 fi
 
@@ -37,7 +38,7 @@ fi
 if [[ "$1" == "-c" ]]
 then
 	echo "c"	
-	cd ~/Documentos/Programacao/C
+	cd ~/Documentos/Programming/C
 	vim $2
 fi
 
@@ -45,7 +46,7 @@ fi
 if [[ "$1" == "-cpp" ]]
 then
 	echo "cpp"	
-	cd ~/Documentos/Programacao/C++
+	cd ~/Documentos/Programming/C++
 	vim $2
 fi
 
@@ -53,7 +54,7 @@ fi
 if [[ "$1" == "-p" ]]
 then
 	echo "python"	
-	cd ~/Documentos/Programacao/PYTHON
+	cd ~/Documentos/Programming/PYTHON
 	vim $2
 fi
 
