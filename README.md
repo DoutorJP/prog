@@ -1,6 +1,6 @@
 # PROG - A simple helper to programming
-# version ENGLISH - 1.0
-# by: João Pedro de Moura Vasconcelos
+## version ENGLISH - 1.0
+## by: João Pedro de Moura Vasconcelos
 
 prog is a simple program to help users on switching the directory to program and create a file.
 
