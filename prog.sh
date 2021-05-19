@@ -30,7 +30,7 @@ fi
 if [[ "$1" == "-j" ]]
 then
 	echo "java"	
-	cd ~/Documentos/Programming/JAVA
+	cd ~/Documents/Programming/JAVA
 	vim $2
 fi
 
@@ -38,7 +38,7 @@ fi
 if [[ "$1" == "-c" ]]
 then
 	echo "c"	
-	cd ~/Documentos/Programming/C
+	cd ~/Documents/Programming/C
 	vim $2
 fi
 
@@ -46,7 +46,7 @@ fi
 if [[ "$1" == "-cpp" ]]
 then
 	echo "cpp"	
-	cd ~/Documentos/Programming/C++
+	cd ~/Documents/Programming/C++
 	vim $2
 fi
 
@@ -54,7 +54,7 @@ fi
 if [[ "$1" == "-p" ]]
 then
 	echo "python"	
-	cd ~/Documentos/Programming/PYTHON
+	cd ~/Documents/Programming/PYTHON
 	vim $2
 fi
 
