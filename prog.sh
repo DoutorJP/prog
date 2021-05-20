@@ -4,7 +4,14 @@
 #versão 1.2
 #por: João Pedro de Moura Vasconcelos
 #19/05/2021
-figlet "PROG"
+
+echo " ____  ____   ___   ____
+|  _ \|  _ \ / _ \ / ___|
+| |_) | |_) | | | | |  _
+|  __/|  _ <| |_| | |_| |
+|_|   |_| \_\\___/ \____|
+"
+
 echo "Bem-vindo ao prog, o ajudande da programação"
 echo "Digite -h para obter ajuda"
 if [[ "$1" == "-h" ]]
