@@ -14,6 +14,7 @@ echo " ____  ____   ___   ____
 
 echo "Bem-vindo ao prog, o ajudande da programação"
 echo "Digite -h para obter ajuda"
+
 if [[ "$1" == "-h" ]]
 then
 	echo "Sintaxe: ./prog.sh <opcao> <nome do arquivo>"
@@ -26,42 +27,31 @@ then
 	echo " -cpp			C++		 "
 	echo "-p 			PYTHON		 "
 fi
-if [[ "$1" == "-s" ]]
-then
+
+case "${1}" in
+  "-s")
 	echo "shell"	
 	cd ~/Documentos/Programacao/SHELL	
-	vim $2
-fi
-
-if [[ "$1" == "-j" ]]
-then
+	vim $2 
+  ;;
+  "-j")
 	echo "java"	
 	cd ~/Documentos/Programacao/JAVA
 	vim $2
-fi
-
-
-if [[ "$1" == "-c" ]]
-then
+  ;;
+  "-c")
 	echo "c"	
 	cd ~/Documentos/Programacao/C
 	vim $2
-fi
-
-
-if [[ "$1" == "-cpp" ]]
-then
+  ;;
+  "-cpp")
 	echo "cpp"	
-	cd ~/Documentos/Programacao/C++
+	cd ~/Documentos/Programacao/C
 	vim $2
-fi
-
-
-if [[ "$1" == "-p" ]]
-then
+  ;;
+  "-cpp")
 	echo "python"	
 	cd ~/Documentos/Programacao/PYTHON
 	vim $2
-fi
-
-
+  ;;
+esac
