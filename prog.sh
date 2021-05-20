@@ -26,9 +26,16 @@ then
 	echo " -c 			C		 "
 	echo " -cpp			C++		 "
 	echo "-p 			PYTHON		 "
+	exit 0
 fi
 
 case "${1}" in
+  "")
+     # Sai imediatamente se o usuário não passar nenhuma opção
+     # O numero 1 na frente é porque você esperava que o usuário passasse uma opção
+     # 1 significa "Erro genérico"
+     exit 1
+  ;;
   "-s")
 	echo "shell"	
 	cd ~/Documentos/Programacao/SHELL	
@@ -53,5 +60,9 @@ case "${1}" in
 	echo "python"	
 	cd ~/Documentos/Programacao/PYTHON
 	vim $2
+  ;;
+  *)
+     echo "Erro: Opção inválida"
+     exit 126 # Código de erro padrão para opção que não pode ser executada
   ;;
 esac
