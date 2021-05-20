@@ -62,4 +62,11 @@ case "${1}" in
   ;;
 esac
 
+if [[ "${2}" == "" ]]
+then
+	echo "Erro: Você precisa passar o nome do arquivo:"
+	echo "Sintaxe: ./prog.sh ${1} <nome do arquivo>"
+	exit 1
+fi
+
 vim $2
