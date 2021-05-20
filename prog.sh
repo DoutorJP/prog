@@ -25,7 +25,7 @@ then
 	echo " -j			JAVA		 "
 	echo " -c 			C		 "
 	echo " -cpp			C++		 "
-	echo "-p 			PYTHON		 "
+	echo " -p 			PYTHON		 "
 	exit 0
 fi
 
@@ -39,30 +39,27 @@ case "${1}" in
   "-s")
 	echo "shell"	
 	cd ~/Documentos/Programacao/SHELL	
-	vim $2 
   ;;
   "-j")
 	echo "java"	
 	cd ~/Documentos/Programacao/JAVA
-	vim $2
   ;;
   "-c")
 	echo "c"	
 	cd ~/Documentos/Programacao/C
-	vim $2
   ;;
   "-cpp")
 	echo "cpp"	
 	cd ~/Documentos/Programacao/C
-	vim $2
   ;;
   "-cpp")
 	echo "python"	
 	cd ~/Documentos/Programacao/PYTHON
-	vim $2
   ;;
   *)
      echo "Erro: Opção inválida"
      exit 126 # Código de erro padrão para opção que não pode ser executada
   ;;
 esac
+
+vim $2
