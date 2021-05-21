@@ -6,9 +6,6 @@ Sinta-se livre para edita-lo para o seu proposito!
 
 ## INSTALAÇÃO
 
-### ATENÇÃO
-**PARA INSTALAR O PROG VOCÊ DEVERÁ INSTALAR A DEPENDENCIA `figlet`, confira nos repositórios da sua distribuição**
-
 Rode o comando em seu terminal:
 ` https://github.com/DoutorJP/prog/`
 
@@ -16,7 +13,7 @@ depois:
 
 ` cd ~/prog`
 
-Para intalar o prog rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`(Certifique-se de rodar ` chmod +x config.sh` antes. Faça o mesmo para o arquivo principal `prog.sh`)
+Para intalar o prog rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`
 
 digite `prog -h`para ter um manual completo do programa!
 
