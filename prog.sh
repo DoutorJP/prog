@@ -37,23 +37,28 @@ case "${1}" in
      exit 1
   ;;
   "-s")
-	echo "shell"	
+	echo "shell"
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"
 	cd "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"	
   ;;
   "-j")
 	echo "java"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
 	cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
   ;;
   "-c")
 	echo "c"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/C"
 	cd "$(xdg-user-dir DOCUMENTS)/Programacao/C"
   ;;
   "-cpp")
 	echo "cpp"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
 	cd "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
   ;;
   "-p")
 	echo "python"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
 	cd "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
   ;;
   *)
