@@ -38,23 +38,23 @@ case "${1}" in
   ;;
   "-s")
 	echo "shell"	
-	cd ~/Documentos/Programacao/SHELL	
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"	
   ;;
   "-j")
 	echo "java"	
-	cd ~/Documentos/Programacao/JAVA
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
   ;;
   "-c")
 	echo "c"	
-	cd ~/Documentos/Programacao/C
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/C"
   ;;
   "-cpp")
 	echo "cpp"	
-	cd ~/Documentos/Programacao/C
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
   ;;
-  "-cpp")
+  "-p")
 	echo "python"	
-	cd ~/Documentos/Programacao/PYTHON
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
   ;;
   *)
      echo "Erro: Opção inválida"
