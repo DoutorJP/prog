@@ -26,6 +26,7 @@ then
 	echo " -c 			C		 "
 	echo " -cpp			C++		 "
 	echo " -p 			PYTHON		 "
+	echo " -l 			Lua		 "
 	exit 0
 fi
 
@@ -60,6 +61,11 @@ case "${1}" in
 	echo "python"	
 	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
 	cd "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
+  ;;
+  "-l")
+	echo "lua"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
   ;;
   *)
      echo "Erro: Opção inválida"
