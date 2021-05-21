@@ -69,4 +69,9 @@ then
 	exit 1
 fi
 
-vim $2
+if [[ "${EDITOR}" == "" ]]
+then
+	EDITOR=vim
+fi
+
+${EDITOR} $2
