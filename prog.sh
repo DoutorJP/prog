@@ -4,9 +4,17 @@
 #versão 1.2
 #por: João Pedro de Moura Vasconcelos
 #19/05/2021
-figlet "PROG"
+
+echo " ____  ____   ___   ____
+|  _ \|  _ \ / _ \ / ___|
+| |_) | |_) | | | | |  _
+|  __/|  _ <| |_| | |_| |
+|_|   |_| \_\\___/ \____|
+"
+
 echo "Bem-vindo ao prog, o ajudande da programação"
 echo "Digite -h para obter ajuda"
+
 if [[ "$1" == "-h" ]]
 then
 	echo "Sintaxe: ./prog.sh <opcao> <nome do arquivo>"
@@ -17,44 +25,64 @@ then
 	echo " -j			JAVA		 "
 	echo " -c 			C		 "
 	echo " -cpp			C++		 "
-	echo "-p 			PYTHON		 "
-fi
-if [[ "$1" == "-s" ]]
-then
-	echo "shell"	
-	cd ~/Documentos/Programacao/SHELL	
-	vim $2
+	echo " -p 			PYTHON		 "
+	echo " -l 			Lua		 "
+	exit 0
 fi
 
-if [[ "$1" == "-j" ]]
-then
+case "${1}" in
+  "")
+     # Sai imediatamente se o usuário não passar nenhuma opção
+     # O numero 1 na frente é porque você esperava que o usuário passasse uma opção
+     # 1 significa "Erro genérico"
+     exit 1
+  ;;
+  "-s")
+	echo "shell"
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"	
+  ;;
+  "-j")
 	echo "java"	
-	cd ~/Documentos/Programacao/JAVA
-	vim $2
-fi
-
-
-if [[ "$1" == "-c" ]]
-then
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
+  ;;
+  "-c")
 	echo "c"	
-	cd ~/Documentos/Programacao/C
-	vim $2
-fi
-
-
-if [[ "$1" == "-cpp" ]]
-then
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/C"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/C"
+  ;;
+  "-cpp")
 	echo "cpp"	
-	cd ~/Documentos/Programacao/C++
-	vim $2
-fi
-
-
-if [[ "$1" == "-p" ]]
-then
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
+  ;;
+  "-p")
 	echo "python"	
-	cd ~/Documentos/Programacao/PYTHON
-	vim $2
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
+  ;;
+  "-l")
+	echo "lua"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
+  ;;
+  *)
+     echo "Erro: Opção inválida"
+     exit 126 # Código de erro padrão para opção que não pode ser executada
+  ;;
+esac
+
+if [[ "${2}" == "" ]]
+then
+	echo "Erro: Você precisa passar o nome do arquivo:"
+	echo "Sintaxe: ./prog.sh ${1} <nome do arquivo>"
+	exit 1
 fi
 
+if [[ "${EDITOR}" == "" ]]
+then
+	EDITOR=vim
+fi
 
+${EDITOR} $2
