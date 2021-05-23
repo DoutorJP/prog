@@ -52,40 +52,42 @@ case "${1}" in
      exit 1
   ;;
   "-s")
-	echo "shell"
-	mkdir -p "$PROJETOS/SHELL"
-	cd "$PROJETOS/SHELL"	
+    LINGUAGEM="shell"
   ;;
   "-j")
-	echo "java"	
-	mkdir -p "$PROJETOS/JAVA"
-	cd "$PROJETOS/JAVA"
+    LINGUAGEM="java"  
   ;;
   "-c")
-	echo "c"	
-	mkdir -p "$PROJETOS/C"
-	cd "$PROJETOS/C"
+    LINGUAGEM="c"  
   ;;
   "-cpp")
-	echo "cpp"	
-	mkdir -p "$PROJETOS/CPP"
-	cd "$PROJETOS/CPP"
+    LINGUAGEM="cpp"  
   ;;
   "-p")
-	echo "python"	
-	mkdir -p "$PROJETOS/PYTHON"
-	cd "$PROJETOS/PYTHON"
+    LINGUAGEM="python"  
   ;;
   "-l")
-	echo "lua"	
-	mkdir -p "$PROJETOS/LUA"
-	cd "$PROJETOS/LUA"
+    LINGUAGEM="lua"  
   ;;
   *)
      echo "Erro: Opção inválida"
      exit 126 # Código de erro padrão para opção que não pode ser executada
   ;;
 esac
+
+echo "Entrando no ambiente da linguagem $LINGUAGEM..."
+# Entrar na pasta da linguagem - ${VARIAVEL^^} deixa a variável em maiúsculas
+PASTA="$PROJETOS/${LINGUAGEM^^}"
+# Verificar se a criação de pasta foi bem-sucedida com um if, e só fazer `cd` se tiver sido
+if mkdir -p "$PASTA"
+then
+  cd "$PASTA"
+else
+  echo "Erro: não foi possível criar a pasta $PASTA."
+  exit 1
+fi
+
+
 
 if [[ "${2}" == "" ]]
 then
