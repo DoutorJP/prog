@@ -30,6 +30,20 @@ then
 	exit 0
 fi
 
+# Variáveis de ambiente (criadas no shell que executa o prog):
+#   export PROJETOS="/pasta/que/quero" && ./prog [...]
+# ou
+#   PROJETOS="/pasta/que/quero" ./prog [...]
+# Podem ser acessadas com $VARIAVEL, assim como variáveis criadas dentro do shell.
+# Se estiver vazia, usar um padrão
+if [[ "${PROJETOS}" == "" ]]
+then
+  PROJETOS="$(xdg-user-dir DOCUMENTS)/Programacao"
+else
+  # Obter o caminho completo da pasta de projetos passada pelo usuário:
+  PROJETOS="$(realpath -- "$PROJETOS")"
+fi
+
 case "${1}" in
   "")
      # Sai imediatamente se o usuário não passar nenhuma opção
@@ -39,33 +53,33 @@ case "${1}" in
   ;;
   "-s")
 	echo "shell"
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"	
+	mkdir -p "$PROJETOS/SHELL"
+	cd "$PROJETOS/SHELL"	
   ;;
   "-j")
 	echo "java"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
+	mkdir -p "$PROJETOS/JAVA"
+	cd "$PROJETOS/JAVA"
   ;;
   "-c")
 	echo "c"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/C"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/C"
+	mkdir -p "$PROJETOS/C"
+	cd "$PROJETOS/C"
   ;;
   "-cpp")
 	echo "cpp"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
+	mkdir -p "$PROJETOS/CPP"
+	cd "$PROJETOS/CPP"
   ;;
   "-p")
 	echo "python"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
+	mkdir -p "$PROJETOS/PYTHON"
+	cd "$PROJETOS/PYTHON"
   ;;
   "-l")
 	echo "lua"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
+	mkdir -p "$PROJETOS/LUA"
+	cd "$PROJETOS/LUA"
   ;;
   *)
      echo "Erro: Opção inválida"
@@ -85,4 +99,4 @@ then
 	EDITOR=vim
 fi
 
-${EDITOR} $2
+${EDITOR} "$2"
