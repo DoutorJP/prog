@@ -30,6 +30,20 @@ then
 	exit 0
 fi
 
+# Variáveis de ambiente (criadas no shell que executa o prog):
+#   export PROJETOS="/pasta/que/quero" && ./prog [...]
+# ou
+#   PROJETOS="/pasta/que/quero" ./prog [...]
+# Podem ser acessadas com $VARIAVEL, assim como variáveis criadas dentro do shell.
+# Se estiver vazia, usar um padrão
+if [[ "${PROJETOS}" == "" ]]
+then
+  PROJETOS="$(xdg-user-dir DOCUMENTS)/Programacao"
+else
+  # Obter o caminho completo da pasta de projetos passada pelo usuário:
+  PROJETOS="$(realpath -- "$PROJETOS")"
+fi
+
 case "${1}" in
   "")
      # Sai imediatamente se o usuário não passar nenhuma opção
@@ -38,34 +52,22 @@ case "${1}" in
      exit 1
   ;;
   "-s")
-	echo "shell"
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"	
+    LINGUAGEM="shell"
   ;;
   "-j")
-	echo "java"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
+    LINGUAGEM="java"  
   ;;
   "-c")
-	echo "c"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/C"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/C"
+    LINGUAGEM="c"  
   ;;
   "-cpp")
-	echo "cpp"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
+    LINGUAGEM="cpp"  
   ;;
   "-p")
-	echo "python"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
+    LINGUAGEM="python"  
   ;;
   "-l")
-	echo "lua"	
-	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
-	cd "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
+    LINGUAGEM="lua"  
   ;;
 "-js")
 		echo "javascript"
@@ -79,6 +81,20 @@ case "${1}" in
   ;;
 esac
 
+echo "Entrando no ambiente da linguagem $LINGUAGEM..."
+# Entrar na pasta da linguagem - ${VARIAVEL^^} deixa a variável em maiúsculas
+PASTA="$PROJETOS/${LINGUAGEM^^}"
+# Verificar se a criação de pasta foi bem-sucedida com um if, e só fazer `cd` se tiver sido
+if mkdir -p "$PASTA"
+then
+  cd "$PASTA"
+else
+  echo "Erro: não foi possível criar a pasta $PASTA."
+  exit 1
+fi
+
+
+
 if [[ "${2}" == "" ]]
 then
 	echo "Erro: Você precisa passar o nome do arquivo:"
@@ -91,9 +107,13 @@ then
 	EDITOR=vim
 fi
 
+<<<<<<< HEAD
 if [[ "${EDITOR}" == nano"" ]]
 then
 		EDITOR=nano
 fi
 
 ${EDITOR} $2
+=======
+${EDITOR} "$2"
+>>>>>>> a90d66867e4a293141cfc841c413bb8a57a8f3ea
