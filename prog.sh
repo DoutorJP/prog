@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #PROG - um ajudante para programação
-#versão 1.2
+#versão 1.4
 #por: João Pedro de Moura Vasconcelos
 #19/05/2021
 
@@ -26,7 +26,7 @@ then
 	echo " -c 			C		 "
 	echo " -cpp			C++		 "
 	echo " -p 			PYTHON		 "
-	echo " -l 			Lua		 "
+	echo " -l 			LUA		 "
 	exit 0
 fi
 
@@ -67,6 +67,12 @@ case "${1}" in
 	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
 	cd "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
   ;;
+"-js")
+		echo "javascript"
+		mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/JAVASCRIPT"
+		cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVASCRIPT"
+  ;;
+
   *)
      echo "Erro: Opção inválida"
      exit 126 # Código de erro padrão para opção que não pode ser executada
@@ -80,9 +86,14 @@ then
 	exit 1
 fi
 
-if [[ "${EDITOR}" == "" ]]
+if [[ "${EDITOR}" == vim"" ]]
 then
 	EDITOR=vim
+fi
+
+if [[ "${EDITOR}" == nano"" ]]
+then
+		EDITOR=nano
 fi
 
 ${EDITOR} $2
