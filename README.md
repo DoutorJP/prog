@@ -7,7 +7,7 @@ Sinta-se livre para edita-lo para o seu proposito!
 ## INSTALAÇÃO
 
 Rode o comando em seu terminal:
-` https://github.com/DoutorJP/prog/`
+`git clone https://github.com/DoutorJP/prog/`
 
 depois:
 
