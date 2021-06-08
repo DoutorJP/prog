@@ -3,7 +3,7 @@
 #PROG - um ajudante para programação
 #versão 1.4
 #por: João Pedro de Moura Vasconcelos
-#19/05/2021
+#25/05/2021
 
 echo " ____  ____   ___   ____
 |  _ \|  _ \ / _ \ / ___|
@@ -21,12 +21,12 @@ then
 	echo "============================================"
 	echo " OPCAO                     LINGUAGEM"
 	echo "============================================"
-	echo " -s			SHELL SCRIPT     "
-	echo " -j			JAVA		 "
-	echo " -c 			C		 "
-	echo " -cpp			C++		 "
-	echo " -p 			PYTHON		 "
-	echo " -l 			LUA		 "
+	echo " -s			    SHELL SCRIPT     "
+	echo " -j			    JAVA		 "
+	echo " -c 			    C		 "
+	echo " -cpp			    C++		 "
+	echo " -p 			    PYTHON		 "
+	echo " -l 			    LUA		 "
 	exit 0
 fi
 
