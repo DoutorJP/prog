@@ -13,7 +13,7 @@ depois:
 
 ` cd ~/prog`
 
-Para intalar o prog rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`
+Para instalar o prog rode o arquivo de configuração e os diretorios estarão criados em `~Documentos/Programacao`
 
 digite `prog -h`para ter um manual completo do programa!
 
