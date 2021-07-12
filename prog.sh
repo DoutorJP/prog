@@ -1,16 +1,9 @@
 #!/usr/bin/env bash
 
 #PROG - um ajudante para programação
-#versão 1.4
+#versão 1.2
 #por: João Pedro de Moura Vasconcelos
-#25/05/2021
-
-echo " ____  ____   ___   ____
-|  _ \|  _ \ / _ \ / ___|
-| |_) | |_) | | | | |  _
-|  __/|  _ <| |_| | |_| |
-|_|   |_| \_\\___/ \____|
-"
+#19/05/2021
 
 echo "Bem-vindo ao prog, o ajudande da programação"
 echo "Digite -h para obter ajuda"
@@ -21,27 +14,13 @@ then
 	echo "============================================"
 	echo " OPCAO                     LINGUAGEM"
 	echo "============================================"
-	echo " -s			    SHELL SCRIPT     "
-	echo " -j			    JAVA		 "
-	echo " -c 			    C		 "
-	echo " -cpp			    C++		 "
-	echo " -p 			    PYTHON		 "
-	echo " -l 			    LUA		 "
+	echo " -s			SHELL SCRIPT     "
+	echo " -j			JAVA		 "
+	echo " -c 			C		 "
+	echo " -cpp			C++		 "
+	echo " -p 			PYTHON		 "
+	echo " -l 			Lua		 "
 	exit 0
-fi
-
-# Variáveis de ambiente (criadas no shell que executa o prog):
-#   export PROJETOS="/pasta/que/quero" && ./prog [...]
-# ou
-#   PROJETOS="/pasta/que/quero" ./prog [...]
-# Podem ser acessadas com $VARIAVEL, assim como variáveis criadas dentro do shell.
-# Se estiver vazia, usar um padrão
-if [[ "${PROJETOS}" == "" ]]
-then
-  PROJETOS="$(xdg-user-dir DOCUMENTS)/Programacao"
-else
-  # Obter o caminho completo da pasta de projetos passada pelo usuário:
-  PROJETOS="$(realpath -- "$PROJETOS")"
 fi
 
 case "${1}" in
@@ -52,48 +31,40 @@ case "${1}" in
      exit 1
   ;;
   "-s")
-    LINGUAGEM="shell"
+	echo "shell"
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/SHELL"	
   ;;
   "-j")
-    LINGUAGEM="java"  
+	echo "java"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVA"
   ;;
   "-c")
-    LINGUAGEM="c"  
+	echo "c"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/C"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/C"
   ;;
   "-cpp")
-    LINGUAGEM="cpp"  
+	echo "cpp"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/CPP"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/C++"
   ;;
   "-p")
-    LINGUAGEM="python"  
+	echo "python"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/PYTHON"
   ;;
   "-l")
-    LINGUAGEM="lua"  
+	echo "lua"	
+	mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
+	cd "$(xdg-user-dir DOCUMENTS)/Programacao/LUA"
   ;;
-"-js")
-		echo "javascript"
-		mkdir -p "$(xdg-user-dir DOCUMENTS)/Programacao/JAVASCRIPT"
-		cd "$(xdg-user-dir DOCUMENTS)/Programacao/JAVASCRIPT"
-  ;;
-
   *)
-     echo "Erro: Opção inválida"
+     echo "Erro: Opção invlida"
      exit 126 # Código de erro padrão para opção que não pode ser executada
   ;;
 esac
-
-echo "Entrando no ambiente da linguagem $LINGUAGEM..."
-# Entrar na pasta da linguagem - ${VARIAVEL^^} deixa a variável em maiúsculas
-PASTA="$PROJETOS/${LINGUAGEM^^}"
-# Verificar se a criação de pasta foi bem-sucedida com um if, e só fazer `cd` se tiver sido
-if mkdir -p "$PASTA"
-then
-  cd "$PASTA"
-else
-  echo "Erro: não foi possível criar a pasta $PASTA."
-  exit 1
-fi
-
-
 
 if [[ "${2}" == "" ]]
 then
@@ -102,18 +73,13 @@ then
 	exit 1
 fi
 
-if [[ "${EDITOR}" == vim"" ]]
+if [[ "${EDITOR}" == "" ]]
+then
+	EDITOR=nano
+fi
+if [[ "${EDITOR}" == "-v" ]]
 then
 	EDITOR=vim
 fi
 
-<<<<<<< HEAD
-if [[ "${EDITOR}" == nano"" ]]
-then
-		EDITOR=nano
-fi
-
 ${EDITOR} $2
-=======
-${EDITOR} "$2"
->>>>>>> a90d66867e4a293141cfc841c413bb8a57a8f3ea
