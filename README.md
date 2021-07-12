@@ -18,6 +18,5 @@ Para instalar o prog rode o arquivo de configuração e os diretorios estarão c
 digite `prog -h`para ter um manual completo do programa!
 
 # PROG - um ajudante para programação
-# versão 1.4
-# por: João Pedro de Moura Vasconcelos
-# 07/05/2021
+## por: João Pedro de Moura Vasconcelos
+### 07/05/2021
