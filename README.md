@@ -11,8 +11,8 @@ Rode o comando em seu terminal:
 
 depois:
 
-` cd ~/prog
-sudo cp prog /usr/bin`
+` cd ~/prog`
+`sudo cp prog /usr/bin`
 
 os diretorios estarão criados em `~Documentos/Programacao`
 
