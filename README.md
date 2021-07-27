@@ -11,11 +11,8 @@ Rode o comando em seu terminal:
 
 depois:
 
-` cd ~/prog`
-
-no arquivo de configuração do seu shell (ex: .bashrc), coloque:
-
-`alias prog="cd ~/prog && ./prog"`
+` cd ~/prog
+sudo cp prog /usr/bin`
 
 os diretorios estarão criados em `~Documentos/Programacao`
 
